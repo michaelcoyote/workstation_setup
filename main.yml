@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_files:
+    - vars/main.config.yml
+
+  roles:
+    - role: dotfiles
+      tags: ['dotfiles']
+    - role: geerlingguy.homebrew
+      when: ansible_facts['os_family'] == "Darwin"
+      tags: ['homebrew']
+    - role: geerlingguy.mas
+      when: ansible_facts['os_family'] == "Darwin"
+      tags: ['mas']

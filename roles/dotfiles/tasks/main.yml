@@ -1,0 +1,37 @@
+---
+- name: Clone dotfiles 
+  become: true
+  become_user: "{{ user_name }}"
+  git:
+    repo: git@github.com:michaelcoyote/dotfiles.git
+    dest: "{{ home_dir }}/.dotfiles"
+    accept_hostkey: true
+
+- name: Install dotfiles
+  become: true
+  become_user: "{{ user_name }}"
+  command: "{{ home_dir }}/.dotfiles/DFlink.sh"
+  args:
+    chdir: "{{ home_dir }}/.dotfiles"
+
+- name: Create vimdirs
+  become: true
+  become_user: "{{ user_name }}"
+  file: path={{ item }} state=directory
+  with_items:
+    - "{{ home_dir }}/.vim/"
+    - "{{ home_dir }}/.vim/autoload/"
+    - "{{ home_dir }}/.vim/bundle/"
+
+- name: Install Pathogen
+  become: true
+  become_user: "{{ user_name }}"
+  get_url:
+    url: https://tpo.pe/pathogen.vim
+    dest: "{{ home_dir }}/.vim/autoload/pathogen.vim"
+
+- name: Install vim plugins
+  become: true
+  become_user: "{{ user_name }}"
+  git: repo={{ item.uri }} dest={{ home_dir }}/.vim/bundle/{{ item.name }}
+  with_items: "{{ vim_plugins }}"
