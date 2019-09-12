@@ -34,6 +34,7 @@ homebrew_installed_packages:
   - bats
   - doxygen
   - eslint
+  - font-iosevka
   - gettext
   - gifsicle
   - git
@@ -44,6 +45,7 @@ homebrew_installed_packages:
   - httpie
   - iperf
   - jq
+  - kubectl
   - libevent
   - lynx
   - sqlite
@@ -74,6 +76,9 @@ homebrew_cask_apps:
   - virtualbox
   - flux
   - typora
+  - macpass
+  - signal
+  - minikube
 # - firefox
 
 # See `geerlingguy.mas` role documentation for usage instructions.
