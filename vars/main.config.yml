@@ -44,6 +44,7 @@ homebrew_installed_packages:
   - hub
   - httpie
   - iperf
+  - ipython
   - jq
   - kubectl
   - libevent
@@ -51,12 +52,14 @@ homebrew_installed_packages:
   - sqlite
   - mas
   - mcrypt
+  - mosh
   - nmap
   - npm
   - readline
   - openssl
   - pandoc
   - pv
+  - python
   - shellcheck
   - ssh-copy-id
   - tig
@@ -69,12 +72,13 @@ homebrew_cask_apps:
   - chromedriver
   - docker
   - dropbox
+  - flux
   - licecap
   - macvim
+  - oracle-jdk
   - sequel-pro
   - vagrant
   - virtualbox
-  - flux
   - typora
   - macpass
   - signal
