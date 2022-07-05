@@ -9,3 +9,8 @@
     path: /etc/ansible
     state: directory
   become: true
+
+- name: Am I running on Mac OS X?
+  fail:
+    msg: This playbook only runs on Mac OS X
+  when: ansible_distribution != 'MacOSX'

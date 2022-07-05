@@ -88,3 +88,32 @@ mas_installed_apps:
   - {id: 497799835, name: "Xcode (10.2)"}
   - {id: 442160987, name: "Flycut (1.5)"}
   - {id: 1143641091, name: "SwiftoDo Desktop (3.0.0)"}
+
+dockitems_remove:
+  - Safari
+  - Messages
+  - Mail
+  - FaceTime
+  - Contacts
+  - Music
+
+dockitems_persist:
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+    pos: 3
+  - name: Signal
+    path: "/Applications/Signal.app"
+    pos: 4
+  - name: Terminal
+    path: "/Applications/Utilities/Terminal.app"
+    pos: 5
+  - name: VSCodium
+    path: "/Applications/VSCodium.app"
+    pos: 6
+  - name: Slack
+    path: "/Applications/Slack.app"
+    pos: 7
+  - name: MacVim
+    path: "/Applications/MacVim.app"
+
+  

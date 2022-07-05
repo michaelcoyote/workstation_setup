@@ -6,16 +6,21 @@
     - vars/main.config.yml
     - vars/dotfiles.config.yml
     - vars/vimsetup.config.yml
-    - vars/homebrew.config.yml
+    - vars/geerling-mac.config.yml
 
   roles:
     - role: dotfiles
       tags: ['dotfiles']
     - role: vimsetup
       tags: ['vimsetup']
-    - role: geerlingguy.homebrew
+    - role: geerlingguy.mac.homebrew
       when: ansible_facts['os_family'] == "Darwin"
-      tags: ['homebrew']
-    - role: geerlingguy.mas
+      tags: ['homebrew', 'mac']
+    - role: geerlingguy.mac.mas
       when: ansible_facts['os_family'] == "Darwin"
-      tags: ['mas']
+      tags: ['mas', 'mac']
+# dock requires a program which is broken 
+# so just commenting out the whole thing for now
+#    - role: geerlingguy.mac.dock
+#      when: ansible_facts['os_family'] == "Darwin"
+#      tags: ['dock', 'mac']
