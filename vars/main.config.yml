@@ -1,8 +1,8 @@
 ---
 downloads: ~/.ansible-downloads/
 
-user_name: "michael"
-home_dir: "/Users/michael"  # "{{ lookup('env','HOME') }}"
+user_name: "{{ lookup('env', 'USER') }}"
+home_dir: "{{ lookup('env', 'HOME') }}"
 
 configure_dotfiles: true
 configure_sudoers: true
@@ -21,12 +21,20 @@ dotfiles_files:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-fonts
 
 homebrew_upgrade_all_packages: true
+homebrew_cask_accept_external_apps: true
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   # - tidwall/jj # need to figure out how to install jj
+  # - font-chomsky
+  # - font-comic-mono
+  # - font-fira-mono
+  # - font-hack
+  # - font-iosevka
+  # - font-inconsolata
   - ag
   - autoconf
   - awscli
@@ -34,7 +42,6 @@ homebrew_installed_packages:
   - bats
   - doxygen
   - eslint
-  - font-iosevka
   - gettext
   - gifsicle
   - git
@@ -52,6 +59,7 @@ homebrew_installed_packages:
   - sqlite
   - mas
   - mcrypt
+  - minikube
   - mosh
   - nmap
   - npm
@@ -82,8 +90,7 @@ homebrew_cask_apps:
   - typora
   - macpass
   - signal
-  - minikube
-# - firefox
+#  - firefox
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:

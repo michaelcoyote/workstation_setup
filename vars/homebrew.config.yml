@@ -1,0 +1,90 @@
+---
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-fonts
+
+homebrew_upgrade_all_packages: true
+homebrew_cask_accept_external_apps: true
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  # - tidwall/jj # need to figure out how to install jj
+  # - font-chomsky
+  # - font-comic-mono
+  # - font-fira-mono
+  # - font-hack
+  # - font-iosevka
+  # - font-inconsolata
+  - ag
+  - autoconf
+  - awscli
+  - bash-completion
+  - bats
+  - doxygen
+  - eslint
+  - gettext
+  - gifsicle
+  - git
+  - gist
+  - go
+  - gpg
+  - hub
+  - httpie
+  - iperf
+  - ipython
+  - jq
+  - kubectl
+  - libevent
+  - lynx
+  - sqlite
+  - mas
+  - mcrypt
+  - minikube
+  - mosh
+  - nmap
+  - npm
+  - readline
+  - openssl
+  - pandoc
+  - pv
+  - python
+  - shellcheck
+  - ssh-copy-id
+  - tig
+  - wget
+  - wrk
+  - yamllint
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - chromedriver
+  - docker
+  - dropbox
+  - flux
+  - licecap
+  - macvim
+  - oracle-jdk
+  - sequel-pro
+  - vagrant
+  - virtualbox
+  - typora
+  - macpass
+  - signal
+#  - firefox
+
+# No mas - left as a placeholder
+# Pass in at command line w/
+# --extra-vars "mas_email=stevejobs@apple.com mas_password=123foo_staple"
+mas_email: "{{ lookup('env','MAS_EMAIL') }}"
+mas_password: "{{ lookup('env', MAS_PASSWORD) }}"
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  - {id: 920404675, name: "Monodraw (1.3)"}
+  - {id: 405843582, name: "Alfred (1.2)"}
+  - {id: 918858936, name: "Airmail 3 (3.6.58)"}
+  - {id: 803453959, name: "Slack (3.3.8)"}
+  - {id: 497799835, name: "Xcode (10.2)"}
+  - {id: 442160987, name: "Flycut (1.5)"}
+  - {id: 1143641091, name: "SwiftoDo Desktop (3.0.0)"}

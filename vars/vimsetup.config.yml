@@ -1,0 +1,6 @@
+---
+vim_plugins:
+  - {name: 'vim-fugitive', uri: 'git@github.com:tpope/vim-fugitive.git'}
+  - {name: 'vim-airline', uri: 'git@github.com:vim-airline/vim-airline.git'}
+  - {name: 'vim-flake8', uri: 'git@github.com:nvie/vim-flake8.git'}
+  - {name: 'ale', uri: 'git@github.com:dense-analysis/ale.git'}
