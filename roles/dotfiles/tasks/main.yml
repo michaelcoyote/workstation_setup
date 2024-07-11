@@ -1,5 +1,6 @@
 ---
 - name: Clone dotfiles
+  ignore_errors: true
   become: true
   become_user: "{{ user_name }}"
   git:

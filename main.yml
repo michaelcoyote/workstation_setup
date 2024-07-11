@@ -11,15 +11,20 @@
   roles:
     - role: dotfiles
       tags: ['dotfiles']
+      failed_when:
+        - repo_clone.failed
+        - not 'Local modifications exist in repository' in repo_clone.msg
     - role: vimsetup
       tags: ['vimsetup']
     - role: geerlingguy.mac.homebrew
+      ignore_errors: true
       when: ansible_facts['os_family'] == "Darwin"
       tags: ['homebrew', 'mac']
-    - role: geerlingguy.mac.mas
-      when: ansible_facts['os_family'] == "Darwin"
-      tags: ['mas', 'mac']
-# dock requires a program which is broken 
+# Commenting out the mas for now.
+#    - role: geerlingguy.mac.mas
+#      when: ansible_facts['os_family'] == "Darwin"
+#      tags: ['mas', 'mac']
+# dock requires a program which is broken
 # so just commenting out the whole thing for now
 #    - role: geerlingguy.mac.dock
 #      when: ansible_facts['os_family'] == "Darwin"
